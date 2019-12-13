@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<head>
+    <meta name="viewport" content="width=device-width, initial scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>New</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https:////cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+<nav th:replace="~{menu::#nav_menu(new)}"></nav>
+<div>
+
+
+        <form th:action="@{~/new}" method="post" th:object="${nProduct}">
+            <label for="naam" th:text="naam"></label>
+            <input type="text" th:field="*{naam}" id="naam">
+            <span th:if="${#fields.hasErrors('naam')}" th:errors="naam" class="error"></span>
+
+            <label for="omschrijving" th:text="omschrijving"></label>
+            <input type="text" th:field="*{omschrijving}" id="omschrijving">
+            <span th:if="${#fields.hasErrors('omschrijving')}" th:errors="omschrijving" class="error"></span>
+
+            <label for="username" th:text="username"></label>
+            <input type="username" th:field="*{username}" id="username">
+            <span th:if="${#fields.hasErrors('username')}" th:errors="username" class="error"></span>
+
+
+            <label for="email" th:text="email"></label>
+            <input type="text" th:field="*{email}" id="email">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="email" class="error"></span>
+
+            <label for="initieleVraagprijs" th:text="initieleVraagprijs"></label>
+            <input type="text" th:field="*{initieleVraagprijs}" id="initieleVraagprijs">
+            <span th:if="${#fields.hasErrors('initieleVraagprijs')}" th:errors="initieleVraagprijs"
+                  class="error"></span>
+            <input type="submit">
+
+
+        </form>
+
+
+
+
+</div>
+</body>
+</html>
